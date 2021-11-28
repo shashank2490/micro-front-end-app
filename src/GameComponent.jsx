@@ -19,7 +19,6 @@ const GameComponent = ({gameName, componentHostUrl, history})=>{
           .then((res) => res.json())
           .then((manifest) => {
             const style = document.createElement("link");
-            style.tyoe = 'text/css';
             style.href = `${componentHostUrl}${manifest.files["main.css"]}`;
             document.head.appendChild(style);
 
