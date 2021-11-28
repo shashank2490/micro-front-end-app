@@ -20,6 +20,7 @@ const GameComponent = ({ gameName, componentHostUrl, history }) => {
     };
 
     if (document.getElementById(scriptId)) {
+      setShowLoadingText(false);
       renderMicroFrontend();
       return;
     }
