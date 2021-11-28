@@ -20,6 +20,7 @@ const GameComponent = ({gameName, componentHostUrl, history})=>{
           .then((manifest) => {
             const style = document.createElement("link");
             style.href = `${componentHostUrl}${manifest.files["main.css"]}`;
+            style.rel = `stylesheet`;
             document.head.appendChild(style);
 
             const script = document.createElement("script");
