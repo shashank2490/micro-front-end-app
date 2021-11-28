@@ -18,6 +18,11 @@ const GameComponent = ({gameName, componentHostUrl, history})=>{
         fetch(`${componentHostUrl}/asset-manifest.json`)
           .then((res) => res.json())
           .then((manifest) => {
+            const style = document.createElement("link");
+            style.tyoe = 'text/css';
+            style.href = `${componentHostUrl}${manifest.files["main.css"]}`;
+            document.head.appendChild(style);
+
             const script = document.createElement("script");
             script.id = scriptId;
             script.crossOrigin = "";
